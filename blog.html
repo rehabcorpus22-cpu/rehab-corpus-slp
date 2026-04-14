@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contactanos en Rehab Corpus. Tel: +52 144 47108351. Manuel J. Clouthiuer #333, San Luis Potosi">
-    <title>Contacto - Rehab Corpus</title>
+    <meta name="description" content="Articulos y consejos de salud y rehabilitacion por el equipo de Rehab Corpus">
+    <title>Blog de Salud - Rehab Corpus</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root { --primary: #00a7c6; --secondary: #4CAF50; --dark: #1a2636; --text: #444; }
@@ -79,25 +79,19 @@
             .footer-bottom { flex-direction: column; text-align: center; }
         }
 
-        .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:start; }
-        .contact-item { display:flex; align-items:flex-start; gap:15px; margin-bottom:25px; }
-        .contact-icon { font-size:1.6rem; width:48px; height:48px; background:linear-gradient(135deg,var(--primary),var(--secondary)); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-        .contact-item h4 { color:var(--dark); font-weight:700; margin-bottom:5px; }
-        .contact-item p { color:#666; line-height:1.6; font-size:0.92rem; }
-        .contact-item a { color:var(--primary); font-weight:600; }
-        .contact-form-wrap { background:#f5f7fa; border-radius:20px; padding:40px; }
-        .form-row { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
-        .form-group { margin-bottom:18px; }
-        .form-group label { display:block; color:var(--dark); font-weight:600; font-size:0.9rem; margin-bottom:7px; }
-        .form-group input, .form-group select, .form-group textarea { width:100%; padding:12px 16px; border:2px solid #e8e8e8; border-radius:10px; font-size:0.95rem; font-family:inherit; transition:border-color 0.25s; background:#fff; color:var(--text); outline:none; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--primary); }
-        .form-group textarea { resize:vertical; }
-        .map-section { margin-top:60px; }
-        .map-section h2 { text-align:center; color:var(--dark); font-size:1.6rem; font-weight:800; margin-bottom:25px; }
-        .map-container { border-radius:16px; overflow:hidden; box-shadow:0 5px 25px rgba(0,0,0,0.1); }
-        .form-success { display:none; margin-top:15px; padding:15px; border-radius:10px; background:#f0fff0; color:#2e7d32; text-align:center; font-weight:600; border:1px solid #c8e6c9; }
-        @media(max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
-        @media(max-width:600px){ .form-row{grid-template-columns:1fr;} }
+        .blog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:30px; }
+        .blog-card { background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.07); transition:all 0.3s; }
+        .blog-card:hover { transform:translateY(-7px); box-shadow:0 14px 40px rgba(0,0,0,0.13); }
+        .blog-img { height:160px; display:flex; align-items:center; justify-content:center; font-size:4rem; }
+        .blog-content { padding:25px; }
+        .blog-meta { display:flex; gap:12px; align-items:center; margin-bottom:12px; flex-wrap:wrap; }
+        .blog-cat { background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; padding:3px 12px; border-radius:12px; font-size:0.75rem; font-weight:700; }
+        .blog-date { color:#999; font-size:0.82rem; }
+        .blog-content h3 { color:var(--dark); font-size:1.1rem; font-weight:700; margin-bottom:10px; line-height:1.4; }
+        .blog-content p { color:#666; font-size:0.9rem; line-height:1.7; margin-bottom:18px; }
+        .blog-footer { display:flex; justify-content:space-between; font-size:0.82rem; color:#999; border-top:1px solid #f0f0f0; padding-top:12px; flex-wrap:wrap; gap:5px; }
+        .blog-author { color:var(--primary); font-weight:600; }
+        @media(max-width:768px){ .blog-grid{grid-template-columns:1fr;} }
 
     </style>
 </head>
@@ -115,8 +109,8 @@
                 <li><a href="acerca-de.html">Acerca de</a></li>
                 <li><a href="testimonios.html">Testimonios</a></li>
                 <li><a href="precios.html">Precios</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="https://wa.me/5214447108351" class="btn-nav-cta">Agendar Cita</a></li>
             </ul>
         </nav>
@@ -140,119 +134,133 @@
 
 <section class="hero-small">
     <div class="container">
-        <h1>Contactanos</h1>
-        <p>Estamos aqui para ayudarte. Agenda tu cita hoy!</p>
+        <h1>Blog de Salud y Rehabilitacion</h1>
+        <p>Articulos, consejos y novedades sobre tu bienestar</p>
     </div>
 </section>
 
 <section style="background:#fff;">
     <div class="container">
-        <div class="contact-grid">
-            <div>
-                <div class="section-header" style="text-align:left;margin-bottom:35px;">
-                    <div class="section-tag">Informacion</div>
-                    <h2>Como Llegar</h2>
-                    <p>Visitanos en nuestra clinica o contactanos por cualquiera de estos medios</p>
-                </div>
+        <div class="section-header">
+            <div class="section-tag">Articulos</div>
+            <h2>Informacion para tu Salud</h2>
+            <p>Nuestros especialistas comparten conocimiento valioso para tu bienestar diario</p>
+        </div>
 
-                <div class="contact-item">
-                    <div class="contact-icon">&#x1F4CD;</div>
-                    <div>
-                        <h4>Direccion</h4>
-                        <p>Manuel J. Clouthiuer #333<br>San Luis Potosi, SLP, Mexico</p>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-img" style="background:linear-gradient(135deg,var(--primary),#007b96);">&#x1F4AA;</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-cat">Fisioterapia</span>
+                        <span class="blog-date">10 Marzo 2026</span>
                     </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">&#x1F4DE;</div>
-                    <div>
-                        <h4>Telefono / WhatsApp</h4>
-                        <p><a href="tel:+5214447108351">+52 144 47108351</a></p>
+                    <h3>5 Ejercicios Esenciales para el Dolor de Espalda</h3>
+                    <p>El dolor lumbar afecta al 80% de la poblacion en algun momento de su vida. Aprende los ejercicios mas efectivos recomendados por nuestros fisioterapeutas para aliviar y prevenir el dolor de espalda baja.</p>
+                    <div class="blog-footer">
+                        <span class="blog-author">&#x270D;&#xFE0F; Humberto Villalobos</span>
+                        <span>5 min lectura</span>
                     </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">&#x1F4E7;</div>
-                    <div>
-                        <h4>Correo Electronico</h4>
-                        <p><a href="mailto:rehab-corpus@outlook.com">rehab-corpus@outlook.com</a></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">&#x1F557;</div>
-                    <div>
-                        <h4>Horarios de Atencion</h4>
-                        <p><strong>Lunes - Viernes:</strong> 8:00 AM - 8:00 PM<br><strong>Sabados:</strong> 9:00 AM - 2:00 PM<br><strong>Domingos:</strong> Cerrado</p>
-                    </div>
-                </div>
-
-                <a href="https://wa.me/5214447108351" class="btn btn-secondary" style="margin-top:10px;">&#x1F4AC; Escribir por WhatsApp</a>
-                <div style="margin-top:20px;">
-                    <a href="index.html" class="btn-home">&#x1F3E0; Regresar al Inicio</a>
                 </div>
             </div>
 
-            <div class="contact-form-wrap">
-                <div class="section-header" style="text-align:left;margin-bottom:25px;">
-                    <div class="section-tag">Formulario</div>
-                    <h2>Envianos un Mensaje</h2>
+            <div class="blog-card">
+                <div class="blog-img" style="background:linear-gradient(135deg,var(--secondary),#2e7d32);">&#x1F9B5;</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-cat">Rehabilitacion</span>
+                        <span class="blog-date">25 Febrero 2026</span>
+                    </div>
+                    <h3>Guia Completa: Recuperacion de Lesiones de Rodilla</h3>
+                    <p>Las lesiones de rodilla son de las mas comunes en deportistas y adultos mayores. Te explicamos el proceso de rehabilitacion paso a paso, desde la fase aguda hasta la readaptacion completa.</p>
+                    <div class="blog-footer">
+                        <span class="blog-author">&#x270D;&#xFE0F; Dra. Mayra</span>
+                        <span>8 min lectura</span>
+                    </div>
                 </div>
-                <form id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Telefono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="+52 ...">
-                        </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-img" style="background:linear-gradient(135deg,#7b2ff7,#f107a3);">&#x1F9D8;</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-cat">Bienestar</span>
+                        <span class="blog-date">15 Febrero 2026</span>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Correo electronico *</label>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    <h3>Ergonomia en el Trabajo: Como Proteger tu Columna</h3>
+                    <p>Pasar 8 horas frente a una computadora puede danar seriamente tu columna vertebral. Descubre como ajustar tu espacio de trabajo para prevenir lesiones ocupacionales y mejorar tu productividad.</p>
+                    <div class="blog-footer">
+                        <span class="blog-author">&#x270D;&#xFE0F; Marcela Diaz de Leon</span>
+                        <span>6 min lectura</span>
                     </div>
-                    <div class="form-group">
-                        <label for="servicio">Servicio de interes</label>
-                        <select id="servicio" name="servicio">
-                            <option value="">Selecciona un servicio...</option>
-                            <option>Evaluacion Clinica</option>
-                            <option>Fisioterapia Avanzada</option>
-                            <option>Recuperacion Funcional</option>
-                            <option>Bienestar Integral</option>
-                            <option>Otro</option>
-                        </select>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-img" style="background:linear-gradient(135deg,#f59e0b,#d97706);">&#x1F3C3;</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-cat">Deporte</span>
+                        <span class="blog-date">1 Febrero 2026</span>
                     </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje *</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe tu condicion o la razon de tu consulta..." required></textarea>
+                    <h3>Prevencion de Lesiones Deportivas: Lo que Debes Saber</h3>
+                    <p>El 60% de las lesiones deportivas son prevenibles con el entrenamiento adecuado. Aprende las tecnicas de calentamiento, estiramiento y fortalecimiento muscular que reducen el riesgo de lesiones.</p>
+                    <div class="blog-footer">
+                        <span class="blog-author">&#x270D;&#xFE0F; Cesar Ayala Portillo</span>
+                        <span>7 min lectura</span>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%;border:none;font-size:16px;cursor:pointer;">Enviar Mensaje</button>
-                    <div class="form-success" id="formMsg">&#x2705; Mensaje enviado! Nos pondremos en contacto pronto.</div>
-                </form>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-img" style="background:linear-gradient(135deg,#00a7c6,#4CAF50);">&#x1F932;</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-cat">Terapia Manual</span>
+                        <span class="blog-date">20 Enero 2026</span>
+                    </div>
+                    <h3>Beneficios de la Terapia Manual en la Rehabilitacion</h3>
+                    <p>La terapia manual es una de las tecnicas mas efectivas en fisioterapia moderna. Conoce como las tecnicas de movilizacion articular y masoterapia aceleran tu recuperacion de manera natural.</p>
+                    <div class="blog-footer">
+                        <span class="blog-author">&#x270D;&#xFE0F; Abygail Orta Mata</span>
+                        <span>6 min lectura</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-img" style="background:linear-gradient(135deg,#1a2636,#2a3f55);">&#x1F9E0;</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-cat">Neurologia</span>
+                        <span class="blog-date">5 Enero 2026</span>
+                    </div>
+                    <h3>Rehabilitacion Neurologica: Esperanza para Pacientes con ACV</h3>
+                    <p>Los accidentes cerebrovasculares pueden dejar secuelas importantes, pero la rehabilitacion temprana hace una enorme diferencia. Conoce los avances en neurorehabilitacion y las posibilidades de recuperacion funcional.</p>
+                    <div class="blog-footer">
+                        <span class="blog-author">&#x270D;&#xFE0F; Dra. Mayra</span>
+                        <span>10 min lectura</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="map-section">
-            <h2>&#x1F4CD; Nuestra Ubicacion</h2>
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3696.3!2d-100.97!3d22.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842a9f0b3f53d8fb%3A0x6af78b48ef1d4e81!2sManuel%20J.%20Clouthier%2C%20San%20Luis%20Potos%C3%AD!5e0!3m2!1ses!2smx!4v1713000000"
-                    width="100%" height="400" style="border:0;border-radius:16px;" allowfullscreen loading="lazy"
-                    title="Ubicacion de Rehab Corpus">
-                </iframe>
-            </div>
+        <div style="text-align:center; margin-top:55px;">
+            <a href="index.html" class="btn-home">&#x1F3E0; Regresar al Inicio</a>
         </div>
     </div>
 </section>
 
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var msg = document.getElementById('formMsg');
-        msg.style.display = 'block';
-        e.target.reset();
-        setTimeout(function() { msg.style.display = 'none'; }, 5000);
-    });
-</script>
+<section class="cta-section">
+    <div class="container">
+        <h2>&#x00BF;Tienes preguntas sobre tu salud?</h2>
+        <p>Nuestros especialistas estan disponibles para orientarte y resolver tus dudas.</p>
+        <div class="cta-btns">
+            <a href="https://wa.me/5214447108351" class="btn btn-secondary">&#x1F4AC; Consulta por WhatsApp</a>
+            <a href="contacto.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.6);">Contactar Especialista</a>
+        </div>
+    </div>
+</section>
 
 <footer>
     <div class="footer-grid">
