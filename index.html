@@ -1,124 +1,335 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rehab Corpus - Professional Rehabilitation Services">
-    <meta name="author" content="Rehab Corpus">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Rehab Corpus</title>
+    <meta name="description" content="Rehab Corpus - Medicina de Rehabilitación en San Luis Potosí. Especialistas en fisioterapia y recuperación funcional.">
+    <meta name="keywords" content="rehabilitación, fisioterapia, San Luis Potosí, Dra. Mayra, terapia física">
+    <title>Rehab Corpus - Medicina de Rehabilitación</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-            position: relative;
-            z-index: 1000;
-        }
-        .hero {
-            background: url('https://your-image-url.com/hero.jpg') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            margin: 20px 0;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .service {
-            flex: 1 1 30%;
-            margin: 10px;
-            padding: 20px;
-            background-color: #e2e2e2;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .service:hover {
-            transform: scale(1.05);
-        }
-        footer {
-            background: #35424a;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px 0;
-            position: relative;
-            z-index: 1000;
-        }
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 30px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .whatsapp-button:hover {
-            background: #128C7E;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #00a7c6; --secondary: #4CAF50; --dark: #1a2636; --text: #444; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text); background: #f5f7fa; }
+        a { text-decoration: none; }
+
+        /* HEADER */
+        header { background: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 40px; max-width: 1300px; margin: 0 auto; }
+        .logo-wrap { display: flex; align-items: center; gap: 10px; }
+        .logo-wrap img { height: 48px; width: auto; }
+        .logo-text { font-size: 22px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+        .logo-text span { color: var(--secondary); }
+        nav ul { list-style: none; display: flex; gap: 8px; align-items: center; }
+        nav ul a { padding: 8px 14px; border-radius: 6px; color: var(--dark); font-weight: 600; font-size: 14px; transition: all 0.25s; }
+        nav ul a:hover, nav ul a.active { background: var(--primary); color: #fff; }
+        .btn-nav-cta { background: var(--secondary) !important; color: #fff !important; border-radius: 20px !important; padding: 9px 20px !important; }
+        .btn-nav-cta:hover { background: #3d9140 !important; transform: translateY(-1px); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
+        .hamburger span { display: block; width: 25px; height: 3px; background: var(--dark); border-radius: 3px; transition: all 0.3s; }
+
+        /* HERO */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #007b96 40%, var(--secondary) 100%); color: #fff; padding: 100px 40px 80px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); }
+        .hero-content { position: relative; max-width: 800px; margin: 0 auto; }
+        .hero-badge { display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #fff; padding: 6px 18px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.15rem; opacity: 0.92; margin-bottom: 35px; line-height: 1.7; }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 30px; font-weight: 700; font-size: 15px; transition: all 0.3s; cursor: pointer; }
+        .btn-primary { background: #fff; color: var(--primary); }
+        .btn-primary:hover { background: #e8f9fc; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .btn-secondary { background: var(--secondary); color: #fff; }
+        .btn-secondary:hover { background: #3d9140; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.7); }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
+        .hero-stats { display: flex; gap: 40px; justify-content: center; margin-top: 50px; flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat-num { font-size: 2.5rem; font-weight: 800; }
+        .stat-label { font-size: 0.85rem; opacity: 0.85; letter-spacing: 0.5px; }
+
+        /* SECTIONS */
+        section { padding: 70px 40px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-tag { color: var(--primary); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+        .section-header h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--dark); font-weight: 800; margin-bottom: 15px; }
+        .section-header p { color: #777; font-size: 1.05rem; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+        /* SERVICES */
+        .services-section { background: #fff; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .service-card { background: #f5f7fa; border-radius: 16px; padding: 35px 28px; text-align: center; transition: all 0.3s; border: 2px solid transparent; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,167,198,0.15); border-color: var(--primary); background: #fff; }
+        .service-icon { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 30px; background: linear-gradient(135deg, var(--primary), var(--secondary)); }
+        .service-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
+        .service-card p { color: #777; line-height: 1.6; font-size: 0.95rem; margin-bottom: 20px; }
+        .service-price { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+        .services-cta { text-align: center; margin-top: 40px; }
+
+        /* TESTIMONIALS */
+        .testimonials-section { background: linear-gradient(135deg, #f0fbfd, #f0fff0); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .testimonial-card { background: #fff; border-radius: 16px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); border-left: 4px solid var(--primary); transition: all 0.3s; }
+        .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.1); }
+        .stars { color: #f59e0b; font-size: 1.2rem; margin-bottom: 12px; }
+        .testimonial-card p { color: #555; font-style: italic; line-height: 1.7; margin-bottom: 18px; font-size: 0.97rem; }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+        .author-info strong { color: var(--dark); font-size: 0.95rem; display: block; }
+        .author-info span { color: #999; font-size: 0.82rem; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, var(--dark), #2a3f55); color: #fff; text-align: center; }
+        .cta-section h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 18px; }
+        .cta-section p { opacity: 0.85; font-size: 1.05rem; margin-bottom: 35px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+        .cta-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: rgba(255,255,255,0.85); padding: 60px 40px 25px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+        .footer-brand .logo-text { font-size: 1.4rem; margin-bottom: 12px; }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; opacity: 0.75; }
+        .footer-col h4 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: inline-block; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 8px; }
+        .footer-col ul a { color: rgba(255,255,255,0.7); font-size: 0.9rem; transition: color 0.25s; }
+        .footer-col ul a:hover { color: var(--primary); }
+        .footer-col p { font-size: 0.9rem; line-height: 1.8; opacity: 0.8; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .footer-bottom p { font-size: 0.85rem; opacity: 0.65; }
+        .footer-bottom-links { display: flex; gap: 20px; }
+        .footer-bottom-links a { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+        .footer-bottom-links a:hover { color: var(--primary); }
+
+        /* WHATSAPP */
+        .whatsapp-float { position: fixed; bottom: 28px; right: 28px; width: 58px; height: 58px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 20px rgba(37,211,102,0.5); z-index: 999; transition: all 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(37,211,102,0.65); }
+
+        /* BACK TO TOP */
+        .back-home { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; background: var(--primary); color: #fff; border-radius: 25px; font-size: 14px; font-weight: 600; transition: all 0.3s; }
+        .back-home:hover { background: #007b96; transform: translateY(-2px); }
+
+        /* MOBILE NAV */
+        .mobile-nav { display: none; background: #fff; padding: 15px 20px; border-top: 1px solid #eee; }
+        .mobile-nav ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+        .mobile-nav ul a { display: block; padding: 10px 15px; border-radius: 8px; color: var(--dark); font-weight: 600; font-size: 15px; transition: all 0.2s; }
+        .mobile-nav ul a:hover { background: #f0f9fb; color: var(--primary); }
+        .mobile-nav.open { display: block; }
+
+        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) {
+            .navbar { padding: 12px 20px; }
+            nav ul { display: none; }
+            .hamburger { display: flex; }
+            section { padding: 50px 20px; }
+            .hero { padding: 70px 20px 60px; }
+            .hero-stats { gap: 25px; }
+            footer { padding: 50px 20px 20px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 25px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Rehab Corpus</h1>
-        <p>Your Partner in Rehabilitation</p>
-    </header>
-    <section class="hero">
-        <h2>Transforming Lives, One Step at a Time</h2>
-    </section>
-    <section class="section services">
-        <h2>Our Services</h2>
-        <div class="service">
-            <h3>Physical Therapy</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
+
+<header>
+    <div class="navbar">
+        <a href="index.html" class="logo-wrap">
+            <img src="https://raw.githubusercontent.com/rehabcorpus22-cpu/rehab-corpus-slp/main/logo.png" alt="Rehab Corpus Logo" onerror="this.style.display='none'">
+            <span class="logo-text">Rehab<span>Corpus</span></span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="acerca-de.html">Acerca de</a></li>
+                <li><a href="testimonios.html">Testimonios</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://wa.me/5214447108351" class="btn-nav-cta">Agendar Cita</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="index.html">🏠 Inicio</a></li>
+            <li><a href="servicios.html">💊 Servicios</a></li>
+            <li><a href="acerca-de.html">👥 Acerca de</a></li>
+            <li><a href="testimonios.html">⭐ Testimonios</a></li>
+            <li><a href="precios.html">💰 Precios</a></li>
+            <li><a href="blog.html">📝 Blog</a></li>
+            <li><a href="contacto.html">📞 Contacto</a></li>
+            <li><a href="https://wa.me/5214447108351">💬 Agendar Cita</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">🏆 Medicina de Rehabilitación Especializada</div>
+        <h1>Recupera tu Movimiento,<br>Recupera tu Vida</h1>
+        <p>En Rehab Corpus, combinamos tecnología avanzada con atención personalizada para lograr tu recuperación funcional completa. Dra. Mayra y su equipo te acompañan en cada paso.</p>
+        <div class="hero-btns">
+            <a href="https://wa.me/5214447108351" class="btn btn-primary">💬 Agendar Cita Ahora</a>
+            <a href="servicios.html" class="btn btn-outline">Ver Nuestros Servicios</a>
         </div>
-        <div class="service">
-            <h3>Speech Therapy</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
+        <div class="hero-stats">
+            <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Pacientes Atendidos</div></div>
+            <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Años de Experiencia</div></div>
+            <div class="stat"><div class="stat-num">5 ⭐</div><div class="stat-label">Calificación Promedio</div></div>
+            <div class="stat"><div class="stat-num">4</div><div class="stat-label">Especialistas</div></div>
         </div>
-        <div class="service">
-            <h3>Occupational Therapy</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Nuestros Servicios</div>
+            <h2>Tratamientos Especializados para Ti</h2>
+            <p>Ofrecemos soluciones integrales de rehabilitación adaptadas a tus necesidades específicas</p>
         </div>
-    </section>
-    <section class="section testimonials">
-        <h2>Testimonials</h2>
-        <p>User testimonial goes here.</p>
-    </section>
-    <section class="section contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@rehabcorpus.com</p>
-        <p>Phone: (123) 456-7890</p>
-    </section>
-    <footer>
-        <p>&copy; 2026 Rehab Corpus. All Rights Reserved.</p>
-    </footer>
-    <a href="https://wa.me/1234567890" class="whatsapp-button"><i class="fab fa-whatsapp"></i></a>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🩺</div>
+                <h3>Evaluación Clínica</h3>
+                <p>Valoración integral y diagnóstico especializado por la Dra. Mayra para diseñar tu plan de tratamiento personalizado.</p>
+                <div class="service-price">$1,000 MXN</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💪</div>
+                <h3>Tratamiento Avanzado</h3>
+                <p>Terapia física especializada con técnicas modernas para acelerar tu recuperación de manera segura y efectiva.</p>
+                <div class="service-price">$500 MXN/sesión</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>Recuperación Funcional</h3>
+                <p>Programas de readaptación diseñados para restaurar tu movimiento y retornar a tus actividades diarias.</p>
+                <div class="service-price">$500 MXN/sesión</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌿</div>
+                <h3>Bienestar Integral</h3>
+                <p>Programas preventivos y de mantenimiento para conservar tu salud y prevenir lesiones futuras.</p>
+                <div class="service-price">Consultar</div>
+            </div>
+        </div>
+        <div class="services-cta">
+            <a href="servicios.html" class="btn btn-secondary">Ver Todos los Servicios →</a>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS PREVIEW -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Testimonios</div>
+            <h2>Lo que Dicen Nuestros Pacientes</h2>
+            <p>Historias reales de recuperación y bienestar de nuestros pacientes</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Después de mi accidente, pensé que nunca volvería a caminar sin dolor. El equipo de Rehab Corpus, especialmente la Dra. Mayra, hizo posible mi recuperación completa en solo 3 meses."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">R</div>
+                    <div class="author-info">
+                        <strong>Roberto Sánchez</strong>
+                        <span>Lesión de rodilla • Recuperado en 3 meses</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"El trato es excepcional, desde la recepción hasta cada sesión con los fisioterapeutas. Humberto y César me dieron la confianza que necesitaba para seguir adelante con mi tratamiento."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">M</div>
+                    <div class="author-info">
+                        <strong>María González</strong>
+                        <span>Dolor lumbar crónico • Totalmente rehabilitada</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Como deportista, necesitaba recuperarme rápido. Abygail diseñó un programa específico para mis necesidades y pude volver a competir en menos tiempo del esperado. ¡Altamente recomendado!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">C</div>
+                    <div class="author-info">
+                        <strong>Carlos Mendoza</strong>
+                        <span>Lesión deportiva • Volvió a competir</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="services-cta">
+            <a href="testimonios.html" class="btn btn-primary" style="background: var(--primary); color:#fff;">Ver Todos los Testimonios →</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2>¿Listo para Iniciar tu Recuperación?</h2>
+        <p>Agenda tu consulta hoy mismo con la Dra. Mayra y descubre cómo podemos ayudarte a recuperar tu calidad de vida.</p>
+        <div class="cta-btns">
+            <a href="https://wa.me/5214447108351" class="btn btn-secondary">💬 WhatsApp: +52 144 47108351</a>
+            <a href="contacto.html" class="btn btn-outline">Ver Información de Contacto</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="logo-text">Rehab<span>Corpus</span></div>
+            <p>Medicina de Rehabilitación especializada en San Luis Potosí. Comprometidos con tu recuperación y bienestar integral.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Páginas</h4>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="acerca-de.html">Acerca de</a></li>
+                <li><a href="testimonios.html">Testimonios</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>📞 +52 144 47108351<br>📧 rehab-corpus@outlook.com<br>📍 Manuel J. Clouthiuer #333, SLP</p>
+        </div>
+        <div class="footer-col">
+            <h4>Horarios</h4>
+            <p>🕗 Lunes - Viernes<br>8:00 AM - 8:00 PM<br><br>🕘 Sábados<br>9:00 AM - 2:00 PM</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Rehab Corpus. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+            <a href="privacidad.html">Privacidad</a>
+            <a href="terminos.html">Términos</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/5214447108351" class="whatsapp-float" title="Contáctanos por WhatsApp">💬</a>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+</script>
 </body>
 </html>

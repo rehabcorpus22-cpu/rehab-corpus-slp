@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contactanos en Rehab Corpus. Tel: +52 144 47108351. Manuel J. Clouthiuer #333, San Luis Potosi">
-    <title>Contacto - Rehab Corpus</title>
+    <meta name="description" content="Servicios de rehabilitacion y fisioterapia en Rehab Corpus, San Luis Potosi">
+    <title>Servicios - Rehab Corpus</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root { --primary: #00a7c6; --secondary: #4CAF50; --dark: #1a2636; --text: #444; }
@@ -79,25 +79,22 @@
             .footer-bottom { flex-direction: column; text-align: center; }
         }
 
-        .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:60px; align-items:start; }
-        .contact-item { display:flex; align-items:flex-start; gap:15px; margin-bottom:25px; }
-        .contact-icon { font-size:1.6rem; width:48px; height:48px; background:linear-gradient(135deg,var(--primary),var(--secondary)); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-        .contact-item h4 { color:var(--dark); font-weight:700; margin-bottom:5px; }
-        .contact-item p { color:#666; line-height:1.6; font-size:0.92rem; }
-        .contact-item a { color:var(--primary); font-weight:600; }
-        .contact-form-wrap { background:#f5f7fa; border-radius:20px; padding:40px; }
-        .form-row { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
-        .form-group { margin-bottom:18px; }
-        .form-group label { display:block; color:var(--dark); font-weight:600; font-size:0.9rem; margin-bottom:7px; }
-        .form-group input, .form-group select, .form-group textarea { width:100%; padding:12px 16px; border:2px solid #e8e8e8; border-radius:10px; font-size:0.95rem; font-family:inherit; transition:border-color 0.25s; background:#fff; color:var(--text); outline:none; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--primary); }
-        .form-group textarea { resize:vertical; }
-        .map-section { margin-top:60px; }
-        .map-section h2 { text-align:center; color:var(--dark); font-size:1.6rem; font-weight:800; margin-bottom:25px; }
-        .map-container { border-radius:16px; overflow:hidden; box-shadow:0 5px 25px rgba(0,0,0,0.1); }
-        .form-success { display:none; margin-top:15px; padding:15px; border-radius:10px; background:#f0fff0; color:#2e7d32; text-align:center; font-weight:600; border:1px solid #c8e6c9; }
-        @media(max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
-        @media(max-width:600px){ .form-row{grid-template-columns:1fr;} }
+        .service-detail { display: grid; grid-template-columns: 80px 1fr; gap: 30px; align-items: start; background: #fff; border-radius: 20px; padding: 40px; margin-bottom: 30px; box-shadow: 0 5px 25px rgba(0,0,0,0.06); border-left: 5px solid var(--primary); transition: all 0.3s; }
+        .service-detail:hover { box-shadow: 0 10px 40px rgba(0,167,198,0.15); transform: translateY(-3px); }
+        .service-detail-alt { border-left-color: var(--secondary); }
+        .service-detail-alt:hover { box-shadow: 0 10px 40px rgba(76,175,80,0.15); }
+        .service-icon-big { font-size: 3.5rem; text-align: center; padding-top: 5px; }
+        .service-detail h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
+        .service-detail p { color: #666; line-height: 1.7; margin-bottom: 18px; }
+        .service-features { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+        .service-features li { color: #555; font-size: 0.92rem; }
+        .price-tag { font-size: 1.4rem; font-weight: 800; color: var(--primary); margin-bottom: 18px; }
+        .price-tag span { font-size: 0.85rem; font-weight: 500; color: #999; }
+        @media (max-width: 768px) {
+            .service-detail { grid-template-columns: 1fr; gap: 15px; }
+            .service-icon-big { font-size: 2.5rem; }
+            .service-features { grid-template-columns: 1fr; }
+        }
 
     </style>
 </head>
@@ -111,12 +108,12 @@
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="servicios.html" class="active">Servicios</a></li>
                 <li><a href="acerca-de.html">Acerca de</a></li>
                 <li><a href="testimonios.html">Testimonios</a></li>
                 <li><a href="precios.html">Precios</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="https://wa.me/5214447108351" class="btn-nav-cta">Agendar Cita</a></li>
             </ul>
         </nav>
@@ -140,119 +137,99 @@
 
 <section class="hero-small">
     <div class="container">
-        <h1>Contactanos</h1>
-        <p>Estamos aqu&#xED; para ayudarte. &#xA1;Agenda tu cita hoy!</p>
+        <h1>Nuestros Servicios</h1>
+        <p>Tratamientos especializados disenados para tu recuperacion completa</p>
     </div>
 </section>
 
 <section style="background:#fff;">
     <div class="container">
-        <div class="contact-grid">
+        <div class="section-header">
+            <div class="section-tag">Especialidades</div>
+            <h2>Servicios de Rehabilitacion</h2>
+            <p>Cada tratamiento es disenado individualmente por nuestro equipo de expertos</p>
+        </div>
+
+        <div class="service-detail">
+            <div class="service-icon-big">&#x1FA7A;</div>
             <div>
-                <div class="section-header" style="text-align:left;margin-bottom:35px;">
-                    <div class="section-tag">Informacion</div>
-                    <h2>Como Llegar</h2>
-                    <p>Visitanos en nuestra clinica o contactanos por cualquiera de estos medios</p>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">&#x1F4CD;</div>
-                    <div>
-                        <h4>Direccion</h4>
-                        <p>Manuel J. Clouthiuer #333<br>San Luis Potosi, SLP, Mexico</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">&#x1F4DE;</div>
-                    <div>
-                        <h4>Telefono / WhatsApp</h4>
-                        <p><a href="tel:+5214447108351">+52 144 47108351</a></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">&#x1F4E7;</div>
-                    <div>
-                        <h4>Correo Electronico</h4>
-                        <p><a href="mailto:rehab-corpus@outlook.com">rehab-corpus@outlook.com</a></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">&#x1F557;</div>
-                    <div>
-                        <h4>Horarios de Atencion</h4>
-                        <p><strong>Lunes - Viernes:</strong> 8:00 AM - 8:00 PM<br><strong>Sabados:</strong> 9:00 AM - 2:00 PM<br><strong>Domingos:</strong> Cerrado</p>
-                    </div>
-                </div>
-
-                <a href="https://wa.me/5214447108351" class="btn btn-secondary" style="margin-top:10px;">&#x1F4AC; Escribir por WhatsApp</a>
-                <div style="margin-top:20px;">
-                    <a href="index.html" class="btn-home">&#x1F3E0; Regresar al Inicio</a>
-                </div>
-            </div>
-
-            <div class="contact-form-wrap">
-                <div class="section-header" style="text-align:left;margin-bottom:25px;">
-                    <div class="section-tag">Formulario</div>
-                    <h2>Envianos un Mensaje</h2>
-                </div>
-                <form id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Telefono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="+52 ...">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo electronico *</label>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="servicio">Servicio de interes</label>
-                        <select id="servicio" name="servicio">
-                            <option value="">Selecciona un servicio...</option>
-                            <option>Evaluacion Clinica</option>
-                            <option>Fisioterapia Avanzada</option>
-                            <option>Recuperacion Funcional</option>
-                            <option>Bienestar Integral</option>
-                            <option>Otro</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje *</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Describe tu condicion o la razon de tu consulta..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%;border:none;font-size:16px;cursor:pointer;">Enviar Mensaje</button>
-                    <div class="form-success" id="formMsg">&#x2705; Mensaje enviado! Nos pondremos en contacto pronto.</div>
-                </form>
+                <h3>Evaluacion Clinica Integral</h3>
+                <p>La base de todo tratamiento exitoso es un diagnostico preciso. La Dra. Mayra realiza una valoracion completa que incluye historial medico, evaluacion funcional, analisis postural y estudios de movimiento para disenar un plan de rehabilitacion 100% personalizado.</p>
+                <ul class="service-features">
+                    <li>&#x2705; Valoracion funcional completa</li>
+                    <li>&#x2705; Diagnostico especializado</li>
+                    <li>&#x2705; Plan de tratamiento personalizado</li>
+                    <li>&#x2705; Seguimiento medico continuo</li>
+                </ul>
+                <div class="price-tag">$1,000 MXN <span>por consulta</span></div>
+                <a href="https://wa.me/5214447108351?text=Hola, me interesa la Evaluacion Clinica" class="btn btn-primary">Agendar Evaluacion</a>
             </div>
         </div>
 
-        <div class="map-section">
-            <h2>&#x1F4CD; Nuestra Ubicacion</h2>
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3696.3!2d-100.97!3d22.15!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842a9f0b3f53d8fb%3A0x6af78b48ef1d4e81!2sManuel%20J.%20Clouthier%2C%20San%20Luis%20Potos%C3%AD!5e0!3m2!1ses!2smx!4v1713000000"
-                    width="100%" height="400" style="border:0;border-radius:16px;" allowfullscreen loading="lazy"
-                    title="Ubicacion de Rehab Corpus">
-                </iframe>
+        <div class="service-detail service-detail-alt">
+            <div class="service-icon-big">&#x1F4AA;</div>
+            <div>
+                <h3>Tratamiento de Fisioterapia Avanzada</h3>
+                <p>Nuestros fisioterapeutas especializados aplican tecnicas modernas basadas en evidencia cientifica para acelerar tu recuperacion. Utilizamos electroterapia, ultrasonido terapeutico, tecnicas manuales y ejercicio terapeutico progresivo.</p>
+                <ul class="service-features">
+                    <li>&#x2705; Electroterapia (TENS, EMS)</li>
+                    <li>&#x2705; Ultrasonido terapeutico</li>
+                    <li>&#x2705; Terapia manual especializada</li>
+                    <li>&#x2705; Ejercicio terapeutico supervisado</li>
+                </ul>
+                <div class="price-tag">$500 MXN <span>por sesion</span></div>
+                <a href="https://wa.me/5214447108351?text=Hola, me interesa el Tratamiento de Fisioterapia" class="btn btn-primary">Agendar Sesion</a>
             </div>
+        </div>
+
+        <div class="service-detail">
+            <div class="service-icon-big">&#x1F504;</div>
+            <div>
+                <h3>Recuperacion Funcional y Readaptacion</h3>
+                <p>Programa integral disenado para restaurar tu capacidad funcional y retornar a tus actividades cotidianas, laborales o deportivas. Combinamos tecnicas de rehabilitacion neurologica, ortopedica y del deporte para resultados optimos.</p>
+                <ul class="service-features">
+                    <li>&#x2705; Rehabilitacion neurologica</li>
+                    <li>&#x2705; Rehabilitacion ortopedica</li>
+                    <li>&#x2705; Readaptacion deportiva</li>
+                    <li>&#x2705; Retorno progresivo a actividades</li>
+                </ul>
+                <div class="price-tag">$500 MXN <span>por sesion</span></div>
+                <a href="https://wa.me/5214447108351?text=Hola, me interesa la Recuperacion Funcional" class="btn btn-primary">Agendar Sesion</a>
+            </div>
+        </div>
+
+        <div class="service-detail service-detail-alt">
+            <div class="service-icon-big">&#x1F33F;</div>
+            <div>
+                <h3>Programa de Bienestar Integral</h3>
+                <p>Mas alla de la recuperacion, te acompanamos en el mantenimiento de tu salud optima. Disenamos programas preventivos personalizados para conservar tu movilidad, mejorar tu postura y prevenir lesiones futuras mediante ejercicio y educacion en salud.</p>
+                <ul class="service-features">
+                    <li>&#x2705; Programa de ejercicio preventivo</li>
+                    <li>&#x2705; Educacion en higiene postural</li>
+                    <li>&#x2705; Ergonomia laboral</li>
+                    <li>&#x2705; Seguimiento y ajuste de programa</li>
+                </ul>
+                <div class="price-tag">Desde $500 MXN <span>consultar paquetes</span></div>
+                <a href="precios.html" class="btn btn-outline">Ver Paquetes</a>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:50px;">
+            <a href="index.html" class="btn-home">&#x1F3E0; Regresar al Inicio</a>
         </div>
     </div>
 </section>
 
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var msg = document.getElementById('formMsg');
-        msg.style.display = 'block';
-        e.target.reset();
-        setTimeout(function() { msg.style.display = 'none'; }, 5000);
-    });
-</script>
+<section class="cta-section">
+    <div class="container">
+        <h2>&#x00BF;Cual servicio necesitas?</h2>
+        <p>Contactanos y te asesoramos sobre el mejor tratamiento para tu condicion especifica.</p>
+        <div class="cta-btns">
+            <a href="https://wa.me/5214447108351" class="btn btn-secondary">&#x1F4AC; Consulta por WhatsApp</a>
+            <a href="precios.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.6);">Ver Precios y Paquetes</a>
+        </div>
+    </div>
+</section>
 
 <footer>
     <div class="footer-grid">
